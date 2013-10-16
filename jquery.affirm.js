@@ -75,7 +75,7 @@
 		// move it. Instead we'll clone it.
 
 		if ($(content).parent().length) {
-			content = $(content).clone(true);
+			content = $(content).clone(true).show();
 		}
 
 		// Set up modal variables
@@ -278,7 +278,7 @@
 
 			// Is there an overlay? Make sure we add it to the DOM
 			if (this.options.overlay) {
-				this.$overlay.hide().appendTo(document.body).fadeTo(this.options.animSpeed, 0.5);
+				this.$overlay.hide().appendTo(document.body).fadeTo(this.options.animSpeed, this.options.css.overlayOpacity);
 			}
 
 			// Let's prevent awkward scrolling
